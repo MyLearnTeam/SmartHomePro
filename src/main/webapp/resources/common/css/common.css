@@ -1,0 +1,36 @@
+.change {
+	float: left;
+	width: 30% !important;
+}
+.treeDrop{
+	width: 100%
+}
+.treeDrop .dropdown-toggle{
+	width: 100%;text-align: left;background-color: white;color: inherit;
+	overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.treeDrop .dropdown-menu{
+	/* width: 100%; */
+	min-width: 100%;
+}
+.treeDrop .caret{
+	float: right;
+    margin-top: 6px;
+}
+.treeDrop .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover{
+    background-color: white;
+    border-color: #bababa;
+    color: inherit;
+}
+.treeDrop .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    background-color: white;
+    border-color: #bababa;
+    color: inherit;
+}
+.search-col .treeDrop{
+	padding: 0 0;
+	border: none;
+}
+.search-col .treeDrop button{	
+	border: 1px solid #e5e6e7;
+}

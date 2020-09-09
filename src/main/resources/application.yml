@@ -1,0 +1,63 @@
+﻿server:
+  port: 8080 #服务端口
+  servlet:
+    session:
+      timeout: 4h
+spring:
+  profiles:
+    active: #${spring-profle:dev}
+  devtools:
+    restart:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo_tables?characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+  mvc:
+    view:
+      prefix: /jsp/
+      suffix: .jsp
+  cache:
+    ehcache:
+      config: classpath:spring-ehcache.xml
+  servlet:
+    multipart:
+      max-file-size: 100MB
+logging:
+#   path: D://logs
+#  pattern:
+#    console: '%d{yyyy-MM-dd HH:mm:ss} [%-22thread] %-5level %-50logger - %msg%n'
+#    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger - %msg%n'
+  file: logs/project.log
+#    max-size: 10MB
+#    max-history: 15
+  level:
+    com.qcode365: DEBUG
+    jdbc.sqltiming: DEBUG
+    org.springframework.jdbc.core: DEBUG
+    org.springframework: WARN
+shiro:
+  web:
+    enabled: true
+  enabled: true
+mybatis-plus:
+    mapper-locations: classpath:mappers/**/*.xml
+    #实体扫描，多个package用逗号或者分号分隔
+    typeAliasesPackage: com.qcode365.project
+    global-config: 
+      #自定义填充策略接口实现
+        meta-object-handler: com.qcode365.project.core.config.EntityCreateAndUpdateHandler
+        #meta-object-handler: com.qcode365.project.core.config.ModelMetaObjectHandler
+        #刷新mapper 调试神器
+        #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+        #id-type: 0
+        #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+        field-strategy: 2
+        #驼峰下划线转换
+        db-column-underline: false
+        #数据库大写下划线转换
+        #capital-mode: true
+        #逻辑删除配置
+        logic-delete-value: 0
+        logic-not-delete-value: 1
+
